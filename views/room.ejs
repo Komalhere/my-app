@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Clone</title>
+    <link rel="stylesheet" href="style.css" />
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://kit.fontawesome.com/c939d0e917.js"></script>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined">
+    <script src="https://unpkg.com/peerjs@1.3.1/dist/peerjs.min.js"></script>
+    <script>
+      const ROOM_ID = "<%= roomId %>";
+    </script>
+  </head>
+  <body>
+    <div class="header">
+      <div class="logo">
+        <div class="header-back">
+          <i class="fas fa-angle-left"></i>
+        </div>
+        <h3>Clone</h3>
+      </div>
+    </div>  
+    <div class="main">  
+    <div class="left-section">
+      <div class="videos__group">
+        <div id="video-grid">
+
+        </div>
+      </div>
+      <div class="controls">
+        <div class="controls-left">
+          <div id="stopVideo" class="control-button">
+            <i class="fa fa-video-camera" title="Turn camera off"></i>
+          </div>
+          <div id="mute-button" class="control-button">
+            <i class="fa fa-microphone" title="Mute"></i>
+          </div>
+          <div id="showChat" class="control-button">
+            <i class="fa fa-comment" title="Show Chat"></i>
+          </div>
+        </div>
+        <div class="controls-right">
+          <div id="invite-button" class="control-button" title="Invite Someone">
+            <i class="fas fa-user-plus"></i>
+          </div>
+          <div id="leave-meeting" class="control-button">
+            <span class="material-icons-outlined">call_end</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="right-section">
+      <div class="chat-window">
+          <div class="messages">
+
+          </div>
+      </div>
+      <div class="main__message_container">
+        <input id="chat_message" type="text" autocomplete="off" placeholder="Type a new message">
+        <div id="send" class="control-button">
+          <i class="fas fa-chevron-right" title="Send message"></i>
+        </div>
+      </div>
+    </div>
+  </div>
+  </body>
+  <script src="script.js"></script>
+  <script src="invite.js"></script>
+  <script src="audiotoggle.js"></script>
+  <script src="videotoggle.js"></script>
+  <script src="chat-section.js"></script>
+</html>
